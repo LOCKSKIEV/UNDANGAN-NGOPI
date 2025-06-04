@@ -1,0 +1,88 @@
+# UNDANGAN-NGOPI
+undangan ngopi sederhana
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ngopi</title>
+    <style>
+        body {
+            background-image: url('https://example.com/coffee-background.jpg'); /* Ganti dengan URL gambar latar belakang ngopi */
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Undangan Ngopi</h1>
+    <input type="text" id="name" placeholder="Masukkan Nama Anda" required>
+    <br>
+    <button onclick="handleResponse('GAS')">GAS</button>
+    <button onclick="handleResponse('NGGAK DULU')">NGGAK DULU</button>
+    <button onclick="window.location.href='https://chat.whatsapp.com/D63u319RoqyIRyYBGyeTDT'">PUNYA USULAN?</button>
+
+    <div id="nextStep" style="display:none;">
+        <h2>PILIH LOKASI</h2>
+        <button onclick="redirectToLocation('WARMINDO TN')">WARMINDO TN</button>
+        <button onclick="redirectToLocation('BURJO CAFE BUNGA')">BURJO CAFE BUNGA</button>
+        <button onclick="redirectToLocation('ANGKRINGAN GALIH')">ANGKRINGAN GALIH</button>
+        <button onclick="redirectToLocation('KOPI CARAKITA')">KOPI CARAKITA</button>
+        <button onclick="redirectToLocation('FORE COFFE JAKAL')">FORE COFFE JAKAL</button>
+        <button onclick="redirectToLocation('CIRCLE K BABARSARI')">CIRCLE K BABARSARI</button>
+    </div>
+
+    <script>
+        function handleResponse(option) {
+            const name = document.getElementById('name').value;
+            if (option === 'NGGAK DULU') {
+                alert("AWOKAWOK MAU NGOCOK YAA😹");
+            } else if (option === 'GAS') {
+                document.getElementById('nextStep').style.display = 'block';
+                sendEmail(name);
+            }
+        }
+
+        function redirectToLocation(location) {
+            let url;
+            switch (location) {
+                case 'WARMINDO TN':
+                    url = 'https://maps.app.goo.gl/HTXzKhXqrApTRzrt9?g_st=ac';
+                    break;
+                case 'BURJO CAFE BUNGA':
+                    url = 'https://maps.app.goo.gl/ZhUomGem9Wa8MKRy6?g_st=ac';
+                    break;
+                case 'ANGKRINGAN GALIH':
+                    url = 'https://maps.app.goo.gl/sFy3HcY5NRr66XW47?g_st=ac';
+                    break;
+                case 'KOPI CARAKITA':
+                    url = 'https://maps.app.goo.gl/chBr2rEYauaZo4JP9?g_st=ac';
+                    break;
+                case 'FORE COFFE JAKAL':
+                    url = 'https://maps.app.goo.gl/SydTRxquxjG59YqZ9?g_st=ac';
+                    break;
+                case 'CIRCLE K BABARSARI':
+                    url = 'https://maps.app.goo.gl/wBcSWyeAKp459YNh7?g_st=ac';
+                    break;
+            }
+            window.location.href = url;
+        }
+
+        function sendEmail(name) {
+            // Implementasi pengiriman email menggunakan API atau server-side
+            console.log(`Email dikirim ke lockskiev@gmail.com dengan nama: ${name}`);
+        }
+    </script>
+
+</body>
+</html>
